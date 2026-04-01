@@ -320,5 +320,15 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 
 ---
 
+## 📞 Contact & Author
+
+**Ankit Raj**
+
+- 🔗 GitHub: [github.com/Ankit2006Raj](https://github.com/Ankit2006Raj)
+- 💼 LinkedIn: [linkedin.com/in/ankit-raj-226a36309](https://www.linkedin.com/in/ankit-raj-226a36309)
+- 📧 Email: [ankit9905163014@gmail.com](mailto:ankit9905163014@gmail.com)
+
+---
+
 **Made with ❤️ for beautiful homes**
 # Home_Decorator
