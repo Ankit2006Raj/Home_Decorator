@@ -319,6 +319,3 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 - [ ] Material library expansion
 
 ---
-
-**Made with ❤️ for beautiful homes**
-# Home_Decorator
