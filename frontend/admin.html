@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - HomeDecorator</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-900 text-white p-6">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold">
+                    <i class="fas fa-home text-blue-400 mr-2"></i>HomeDecor
+                </h1>
+                <p class="text-gray-400 text-sm">Admin Panel</p>
+            </div>
+            
+            <nav class="space-y-4">
+                <a href="#" onclick="switchTab('dashboard')" class="nav-link active block px-4 py-2 rounded hover:bg-gray-800 transition" data-tab="dashboard">
+                    <i class="fas fa-th-large mr-2"></i>Dashboard
+                </a>
+                <a href="#" onclick="switchTab('furniture')" class="nav-link block px-4 py-2 rounded hover:bg-gray-800 transition" data-tab="furniture">
+                    <i class="fas fa-chair mr-2"></i>Furniture Catalog
+                </a>
+                <a href="#" onclick="switchTab('designs')" class="nav-link block px-4 py-2 rounded hover:bg-gray-800 transition" data-tab="designs">
+                    <i class="fas fa-paint-brush mr-2"></i>Designs
+                </a>
+                <a href="#" onclick="switchTab('users')" class="nav-link block px-4 py-2 rounded hover:bg-gray-800 transition" data-tab="users">
+                    <i class="fas fa-users mr-2"></i>Users
+                </a>
+                <a href="#" onclick="switchTab('analytics')" class="nav-link block px-4 py-2 rounded hover:bg-gray-800 transition" data-tab="analytics">
+                    <i class="fas fa-chart-bar mr-2"></i>Analytics
+                </a>
+                <hr class="my-4 border-gray-700">
+                <a href="/" class="block px-4 py-2 rounded hover:bg-gray-800 transition">
+                    <i class="fas fa-home mr-2"></i>Back to Home
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+            <!-- Header -->
+            <div class="bg-white border-b border-gray-200 px-8 py-6 shadow-sm">
+                <div class="flex items-center justify-between">
+                    <h2 id="pageTitle" class="text-3xl font-bold text-gray-900">Dashboard</h2>
+                    <div class="flex items-center space-x-4">
+                        <input type="text" placeholder="Search..." class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                            <i class="fas fa-bell mr-2"></i>Notifications
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="p-8">
+                <!-- Dashboard Tab -->
+                <div id="dashboard-tab" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-600 text-sm">Total Users</p>
+                                    <p class="text-3xl font-bold" id="totalUsersCount">-</p>
+                                </div>
+                                <i class="fas fa-users text-blue-500 text-4xl opacity-20"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-600 text-sm">Total Designs</p>
+                                    <p class="text-3xl font-bold" id="totalDesignsCount">-</p>
+                                </div>
+                                <i class="fas fa-paint-brush text-purple-500 text-4xl opacity-20"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-600 text-sm">Furniture Items</p>
+                                    <p class="text-3xl font-bold" id="totalFurnitureCount">-</p>
+                                </div>
+                                <i class="fas fa-chair text-green-500 text-4xl opacity-20"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-gray-600 text-sm">Total Revenue</p>
+                                    <p class="text-3xl font-bold text-green-600" id="totalRevenueCount">$0</p>
+                                </div>
+                                <i class="fas fa-dollar-sign text-green-500 text-4xl opacity-20"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-bold mb-4">Recent Activity</h3>
+                            <div id="recentActivity" class="space-y-4">
+                                <p class="text-gray-500">Loading...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-bold mb-4">Popular Room Types</h3>
+                            <div id="popularRooms" class="space-y-3">
+                                <p class="text-gray-500">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Furniture Tab -->
+                <div id="furniture-tab" class="tab-content hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold">Furniture Catalog</h3>
+                        <button onclick="showAddFurnitureModal()" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                            <i class="fas fa-plus mr-2"></i>Add Furniture
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="p-4 border-b border-gray-200">
+                            <input type="text" placeholder="Search furniture..." id="furnitureSearchAdmin" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Name</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Category</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Room Type</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Price</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="furnitureTableBody" class="divide-y divide-gray-200">
+                                <tr>
+                                    <td colspan="5" class="px-6 py-4 text-center text-gray-500">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Designs Tab -->
+                <div id="designs-tab" class="tab-content hidden">
+                    <h3 class="text-2xl font-bold mb-6">All Designs</h3>
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <div class="p-4 border-b border-gray-200">
+                            <input type="text" placeholder="Search designs..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Room Name</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Type</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Items</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Cost</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Created</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="designsTableBody" class="divide-y divide-gray-200">
+                                <tr>
+                                    <td colspan="6" class="px-6 py-4 text-center text-gray-500">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Users Tab -->
+                <div id="users-tab" class="tab-content hidden">
+                    <h3 class="text-2xl font-bold mb-6">User Management</h3>
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <table class="w-full">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Username</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Email</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Designs</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Joined</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody" class="divide-y divide-gray-200">
+                                <tr>
+                                    <td colspan="4" class="px-6 py-4 text-center text-gray-500">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Analytics Tab -->
+                <div id="analytics-tab" class="tab-content hidden">
+                    <h3 class="text-2xl font-bold mb-6">Analytics</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-bold mb-4">Most Used Furniture</h4>
+                            <div id="mostUsedFurniture" class="space-y-3">
+                                <p class="text-gray-500">Loading...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h4 class="font-bold mb-4">Popular Styles</h4>
+                            <div id="popularStyles" class="space-y-3">
+                                <p class="text-gray-500">Loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Furniture Modal -->
+    <div id="addFurnitureModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-2xl w-full mx-4 shadow-2xl">
+            <h2 class="text-2xl font-bold mb-6">Add Furniture Item</h2>
+            
+            <form onsubmit="submitAddFurniture(event)" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Name</label>
+                        <input type="text" id="furnitureName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Category</label>
+                        <select id="furnitureCategory" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <option value="">Select Category</option>
+                            <option value="Beds">Beds</option>
+                            <option value="Sofas">Sofas</option>
+                            <option value="Chairs">Chairs</option>
+                            <option value="Tables">Tables</option>
+                            <option value="Lighting">Lighting</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Room Type</label>
+                        <select id="furnitureRoomType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <option value="bedroom">Bedroom</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="hall">Living Room</option>
+                            <option value="office">Office</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Price</label>
+                        <input type="number" id="furniturePrice" step="0.01" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Length</label>
+                        <input type="number" id="furnitureLength" step="0.1" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Width</label>
+                        <input type="number" id="furnitureWidth" step="0.1" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Height</label>
+                        <input type="number" id="furnitureHeight" step="0.1" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4 pt-4">
+                    <button type="button" onclick="closeAddFurnitureModal()" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition">Cancel</button>
+                    <button type="submit" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Add Furniture</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>

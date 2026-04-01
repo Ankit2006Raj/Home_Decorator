@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Room View - HomeDecorator</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="bg-gray-900">
+    <div class="flex h-screen">
+        <!-- Left Sidebar -->
+        <div class="w-80 bg-gray-800 text-white p-6 overflow-y-auto">
+            <div class="mb-8">
+                <h1 class="text-2xl font-bold mb-2">
+                    <i class="fas fa-cube text-blue-400 mr-2"></i>3D Room Viewer
+                </h1>
+                <p class="text-gray-400 text-sm">Interactive 3D visualization</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Controls -->
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="font-bold mb-4">Camera Controls</h3>
+                    <div class="space-y-2 text-sm">
+                        <p><strong>Rotate:</strong> Left Mouse + Drag</p>
+                        <p><strong>Zoom:</strong> Mouse Wheel / Pinch</p>
+                        <p><strong>Pan:</strong> Right Mouse + Drag</p>
+                    </div>
+                </div>
+                
+                <!-- View Options -->
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="font-bold mb-3">View Options</h3>
+                    <button onclick="changeView('iso')" class="w-full px-4 py-2 bg-blue-600 rounded mb-2 hover:bg-blue-700 transition text-sm">Isometric</button>
+                    <button onclick="changeView('front')" class="w-full px-4 py-2 bg-blue-600 rounded mb-2 hover:bg-blue-700 transition text-sm">Front View</button>
+                    <button onclick="changeView('top')" class="w-full px-4 py-2 bg-blue-600 rounded mb-2 hover:bg-blue-700 transition text-sm">Top View</button>
+                    <button onclick="toggleWireframe()" class="w-full px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 transition text-sm">Toggle Wireframe</button>
+                </div>
+                
+                <!-- Room Info -->
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="font-bold mb-3">Room Information</h3>
+                    <div class="text-sm space-y-2">
+                        <p><strong>Room:</strong> <span id="roomInfo">-</span></p>
+                        <p><strong>Size:</strong> <span id="sizeInfo">-</span></p>
+                        <p><strong>Items:</strong> <span id="itemsInfo">0</span></p>
+                        <p><strong>Estimated Cost:</strong> <span id="costInfo" class="text-green-400">$0</span></p>
+                    </div>
+                </div>
+                
+                <!-- Actions -->
+                <div class="space-y-2">
+                    <button onclick="downloadScreenshot()" class="w-full px-4 py-2 bg-green-600 rounded hover:bg-green-700 transition flex items-center justify-center space-x-2">
+                        <i class="fas fa-download"></i>
+                        <span>Download Image</span>
+                    </button>
+                    <button onclick="goBack()" class="w-full px-4 py-2 bg-gray-600 rounded hover:bg-gray-700 transition flex items-center justify-center space-x-2">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Editor</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main 3D Viewer -->
+        <div id="canvas3d" class="flex-1 bg-gradient-to-b from-gray-900 to-black"></div>
+    </div>
+
+    <script src="/js/three-viewer.js"></script>
+</body>
+</html>
