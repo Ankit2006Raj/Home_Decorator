@@ -320,15 +320,40 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 
 ---
 
-## 📞 Contact & Author
+## 🌟 Footer
+
+<div align="center">
+
+### 📞 Connect with the Creator
 
 **Ankit Raj**
 
-- 🔗 GitHub: [github.com/Ankit2006Raj](https://github.com/Ankit2006Raj)
-- 💼 LinkedIn: [linkedin.com/in/ankit-raj-226a36309](https://www.linkedin.com/in/ankit-raj-226a36309)
-- 📧 Email: [ankit9905163014@gmail.com](mailto:ankit9905163014@gmail.com)
+<p>
+  <a href="https://github.com/Ankit2006Raj" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/ankit-raj-226a36309" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:ankit9905163014@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+</p>
+
+| Platform | Link |
+|----------|------|
+| 🔗 **GitHub** | [github.com/Ankit2006Raj](https://github.com/Ankit2006Raj) |
+| 💼 **LinkedIn** | [linkedin.com/in/ankit-raj-226a36309](https://www.linkedin.com/in/ankit-raj-226a36309) |
+| 📧 **Email** | [ankit9905163014@gmail.com](mailto:ankit9905163014@gmail.com) |
 
 ---
 
-**Made with ❤️ for beautiful homes**
-# Home_Decorator
+### Made with ❤️ by [Ankit Raj](https://github.com/Ankit2006Raj)
+
+**Building beautiful homes, one design at a time** 🏠✨
+
+<p align="center">
+  <i>© 2026 Home Decorator. All rights reserved.</i>
+</p>
+
+</div>
