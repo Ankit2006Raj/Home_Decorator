@@ -143,10 +143,6 @@ home-decorator/
 
 ## 🔌 API Endpoints
 
-### Users
-- `GET /api/users` - Get or create default user
-- `GET /api/users/<id>` - Get user by ID
-- `POST /api/users/create` - Create new user
 
 ### Furniture
 - `GET /api/furniture/all` - Get all furniture items
