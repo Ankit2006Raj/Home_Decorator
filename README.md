@@ -144,13 +144,6 @@ home-decorator/
 ## 🔌 API Endpoints
 
 
-### Furniture
-- `GET /api/furniture/all` - Get all furniture items
-- `GET /api/furniture/room/<type>` - Get furniture by room type
-- `GET /api/furniture/category/<category>` - Get furniture by category
-- `GET /api/furniture/search?q=<query>` - Search furniture
-- `POST /api/furniture/add` - Add custom furniture
-
 ### Designs
 - `POST /api/designs/create` - Create new design
 - `GET /api/designs/<id>` - Get design by ID
