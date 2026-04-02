@@ -143,17 +143,6 @@ home-decorator/
 
 ## 🔌 API Endpoints
 
-
-### Designs
-- `POST /api/designs/create` - Create new design
-- `GET /api/designs/<id>` - Get design by ID
-- `GET /api/designs/user/<user_id>` - Get user's designs
-- `POST /api/designs/<id>/add-item` - Add furniture to design
-- `POST /api/designs/item/<id>/update` - Update item position
-- `POST /api/designs/item/<id>/remove` - Remove item from design
-- `POST /api/designs/<id>/update-colors` - Update room colors
-- `POST /api/designs/<id>/delete` - Delete design
-
 ### AI Features
 - `POST /api/ai/recommendations` - Get furniture recommendations
 - `POST /api/ai/color-palette` - Get color suggestions
