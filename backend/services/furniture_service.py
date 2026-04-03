@@ -1,4 +1,7 @@
 from backend.models import db, Furniture
+import logging
+
+logger = logging.getLogger(__name__)
 
 SAMPLE_FURNITURE = [
     # Bedrooms
@@ -56,9 +59,10 @@ class FurnitureService:
                 db.session.add(furniture)
             
             db.session.commit()
+            logger.info(f"Initialized {len(SAMPLE_FURNITURE)} sample furniture items")
             return True
         except Exception as e:
-            print(f"Error initializing sample furniture: {e}")
+            logger.error(f"Error initializing sample furniture: {str(e)}", exc_info=True)
             db.session.rollback()
             return False
     

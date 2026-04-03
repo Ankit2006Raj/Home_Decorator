@@ -1,16 +1,60 @@
 import google.generativeai as genai
 import os
 import json
+import logging
+import re
+
+logger = logging.getLogger(__name__)
 
 class GeminiService:
+    """Service for AI-powered recommendations using Google Gemini API"""
+    
     def __init__(self, api_key=None):
         self.api_key = api_key or os.getenv('GEMINI_API_KEY')
-        if self.api_key:
+        self.model = None
+        
+        if not self.api_key:
+            logger.warning("GEMINI_API_KEY not found in environment variables")
+            return
+        
+        try:
             genai.configure(api_key=self.api_key)
-        self.model = genai.GenerativeModel('gemini-pro')
+            self.model = genai.GenerativeModel('gemini-pro')
+            logger.info("Gemini service initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize Gemini service: {str(e)}")
+    
+    def _extract_json(self, text, json_type='array'):
+        """Extract JSON from text response"""
+        try:
+            # Try direct JSON parse
+            if text.strip().startswith('[' if json_type == 'array' else '{'):
+                return json.loads(text)
+            
+            # Try to extract from code blocks
+            pattern = r'```(?:json)?\n(.*?)\n```' if json_type == 'array' else r'```(?:json)?\n(.*?)\n```'
+            match = re.search(pattern, text, re.DOTALL)
+            if match:
+                return json.loads(match.group(1))
+            
+            # Try to find JSON in text
+            pattern = r'\[.*\]' if json_type == 'array' else r'\{.*\}'
+            match = re.search(pattern, text, re.DOTALL)
+            if match:
+                return json.loads(match.group())
+            
+            logger.warning(f"Could not extract {json_type} from response")
+            return [] if json_type == 'array' else {}
+        except json.JSONDecodeError as e:
+            logger.error(f"JSON decode error: {str(e)}")
+            return [] if json_type == 'array' else {}
     
     def get_furniture_recommendations(self, room_type, budget, style):
         """Get AI-powered furniture recommendations"""
+        if not self.model:
+            logger.error("Gemini model not initialized")
+            return []
+        
         prompt = f"""
         Based on the following criteria, suggest 5 furniture items for a {room_type}:
         - Budget: ${budget}
@@ -27,26 +71,19 @@ class GeminiService:
         """
         try:
             response = self.model.generate_content(prompt)
-            # Parse JSON from response
-            response_text = response.text
-            # Try to extract JSON
-            if response_text.startswith('['):
-                recommendations = json.loads(response_text)
-            else:
-                # Extract JSON from text if wrapped in markdown code blocks
-                import re
-                json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
-                if json_match:
-                    recommendations = json.loads(json_match.group())
-                else:
-                    recommendations = []
+            recommendations = self._extract_json(response.text, 'array')
+            logger.info(f"Generated {len(recommendations)} furniture recommendations")
             return recommendations
         except Exception as e:
-            print(f"Error getting recommendations: {e}")
+            logger.error(f"Error getting recommendations: {str(e)}", exc_info=True)
             return []
     
     def get_color_palette_suggestions(self, style, mood):
         """Get AI-powered color palette suggestions"""
+        if not self.model:
+            logger.error("Gemini model not initialized")
+            return {}
+        
         prompt = f"""
         Suggest a color palette for a {style} style room with a {mood} mood.
         
@@ -58,23 +95,19 @@ class GeminiService:
         """
         try:
             response = self.model.generate_content(prompt)
-            response_text = response.text
-            if response_text.startswith('{'):
-                palette = json.loads(response_text)
-            else:
-                import re
-                json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-                if json_match:
-                    palette = json.loads(json_match.group())
-                else:
-                    palette = {}
+            palette = self._extract_json(response.text, 'object')
+            logger.info("Generated color palette suggestions")
             return palette
         except Exception as e:
-            print(f"Error getting color palette: {e}")
+            logger.error(f"Error getting color palette: {str(e)}", exc_info=True)
             return {}
     
     def get_layout_suggestions(self, room_type, room_width, room_length, budget):
         """Get AI-powered layout suggestions"""
+        if not self.model:
+            logger.error("Gemini model not initialized")
+            return {}
+        
         prompt = f"""
         Suggest an optimal furniture layout for a {room_type} with dimensions {room_width}ft x {room_length}ft and budget ${budget}.
         
@@ -88,32 +121,10 @@ class GeminiService:
         """
         try:
             response = self.model.generate_content(prompt)
-            response_text = response.text
-            # Extended JSON extraction logic
-            suggestions = {
-                'arrangement': response_text.split('\n')[0],
-                'pieces': response_text,
-                'tips': response_text
-            }
+            suggestions = self._extract_json(response.text, 'object')
+            logger.info("Generated layout suggestions")
             return suggestions
         except Exception as e:
-            print(f"Error getting layout suggestions: {e}")
+            logger.error(f"Error getting layout suggestions: {str(e)}", exc_info=True)
             return {}
-    
-    def estimate_room_from_image(self, image_data):
-        """Estimate room dimensions and layout from image"""
-        prompt = f"""
-        Based on this room image, estimate:
-        1. Room type (bedroom, kitchen, hall, office)
-        2. Approximate dimensions
-        3. Existing furniture
-        4. Suggested improvements
-        
-        Format as JSON.
-        """
-        try:
-            response = self.model.generate_content([prompt, image_data])
-            return json.loads(response.text)
-        except Exception as e:
-            print(f"Error estimating room: {e}")
-            return {}
+
