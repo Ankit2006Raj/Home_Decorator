@@ -186,16 +186,6 @@ To use AI-powered recommendations:
    - Color palette suggestions
    - Layout optimization
 
-## 📊 Database
-
-The application uses SQLite by default. Database is automatically created on first run with all necessary tables:
-- users
-- rooms
-- furniture
-- designs
-- design_items
-- themes
-
 ## 🔧 Troubleshooting
 
 ### Port Already in Use
