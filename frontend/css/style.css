@@ -450,6 +450,24 @@ body.dark-mode .form-select { background: #0f172a; color: #f1f5f9; border-color:
   .toast { min-width: unset; }
 }
 
+/* ===== FOOTER STYLES ===== */
+footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  transition: var(--transition);
+}
+
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-light);
+}
+
+footer hr {
+  border-color: rgba(255,255,255,0.1);
+}
+
 /* ===== UTILITY ===== */
 .shadow-glow { box-shadow: var(--shadow-glow); }
 .smooth-transition { transition: var(--transition); }
