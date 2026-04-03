@@ -393,3 +393,26 @@ tbody tr:hover {
         font-size: 12px;
     }
 }
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+    .admin-container {
+        background: #111827;
+    }
+    
+    .admin-main {
+        background: #1f2937;
+    }
+}
+
+/* ===== ANIMATION & TRANSITIONS ===== */
+.fade-in { animation: fadeIn 0.3s ease-in; }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-in { animation: slideIn 0.3s ease-out; }
+@keyframes slideIn {
+    from { transform: translateX(-10px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
