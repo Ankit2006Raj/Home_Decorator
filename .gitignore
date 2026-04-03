@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -15,36 +16,46 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
+# Virtual environments
 venv/
 ENV/
 env/
 .venv
 
-.DS_Store
-*.swp
-*~
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.DS_Store
 
+# Database
 *.db
 *.sqlite
 *.sqlite3
+instance/
 
-node_modules/
-npm-debug.log
-
+# Environment
 .env
 .env.local
+.env.*.local
 
-uploads/
-temp/
+# Static files
+frontend/assets/uploads/
+frontend/images/cache/
 
-.coverage
-.pytest_cache/
+# Logs
+*.log
+logs/
 
-dist/
-build/
+# Cache
+.cache/
+*.cache
