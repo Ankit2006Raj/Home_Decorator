@@ -143,6 +143,28 @@ home-decorator/
 
 ## 🔌 API Endpoints
 
+### Users
+- `GET /api/users` - Get or create default user
+- `GET /api/users/<id>` - Get user by ID
+- `POST /api/users/create` - Create new user
+
+### Furniture
+- `GET /api/furniture/all` - Get all furniture items
+- `GET /api/furniture/room/<type>` - Get furniture by room type
+- `GET /api/furniture/category/<category>` - Get furniture by category
+- `GET /api/furniture/search?q=<query>` - Search furniture
+- `POST /api/furniture/add` - Add custom furniture
+
+### Designs
+- `POST /api/designs/create` - Create new design
+- `GET /api/designs/<id>` - Get design by ID
+- `GET /api/designs/user/<user_id>` - Get user's designs
+- `POST /api/designs/<id>/add-item` - Add furniture to design
+- `POST /api/designs/item/<id>/update` - Update item position
+- `POST /api/designs/item/<id>/remove` - Remove item from design
+- `POST /api/designs/<id>/update-colors` - Update room colors
+- `POST /api/designs/<id>/delete` - Delete design
+
 ### AI Features
 - `POST /api/ai/recommendations` - Get furniture recommendations
 - `POST /api/ai/color-palette` - Get color suggestions
