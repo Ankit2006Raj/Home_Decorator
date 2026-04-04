@@ -192,12 +192,6 @@ To use AI-powered recommendations:
 2. **Add to .env file**
    ```env
    GEMINI_API_KEY=your_copied_api_key
-   ```
-
-3. **Features Enabled:**
-   - Furniture recommendations
-   - Color palette suggestions
-   - Layout optimization
 
 ## 🔧 Troubleshooting
 
