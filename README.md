@@ -192,12 +192,6 @@ SECRET_KEY=your-secret-key-here
 
 To use AI-powered recommendations:
 
-1. **Get Gemini API Key**
-   - Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Sign in with your Google account
-   - Click "Create API Key"
-   - Copy the key
-
 2. **Add to .env file**
    ```env
    GEMINI_API_KEY=your_copied_api_key
