@@ -7,13 +7,7 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 - 📊 Budget estimator
 - 📦 Extensive furniture catalog
 - 🛒 Price and material information
-- 📱 Responsive design for mobile/tablet
-- 🌙 Light/Dark mode support
-- 👨‍💼 Admin panel for furniture management
-
-## 🚀 Quick Start
-
-### Prerequisites
+- 📱 Responsive de
 - Python 3.8+
 - pip (Python package manager)
 - A Gemini API key (free from [Google AI Studio](https://makersuite.google.com/app/apikey))
