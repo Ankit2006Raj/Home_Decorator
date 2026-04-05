@@ -89,9 +89,6 @@ home-decorator/
 │   │   ├── furniture.py
 │   │   ├── design.py
 │   │   └── theme.py
-│   ├── routes/            # API endpoints
-│   │   ├── user_routes.py
-│   │   ├── furniture_routes.py
 │   │   ├── design_routes.py
 │   │   └── ai_routes.py
 │   └── services/          # Business logic
