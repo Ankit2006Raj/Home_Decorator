@@ -2,12 +2,6 @@
 
 A modern, feature-rich web application for creating stunning 2D floor plans and 3D visualizations of interior spaces with AI-powered furniture recommendations.
 
-## 🎨 Feat
-### AI Features (with Gemini API)
-- 🤖 Smart furniture recommendations based on room type and budget
-- 🎨 AI-generated color palette suggestions
-- 💡 Smart layout optimization suggestions
-
 ### Additional Features
 - 3D room visualization with Three.js
 - 📊 Budget estimator
