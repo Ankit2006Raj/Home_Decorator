@@ -208,11 +208,7 @@ rm home_decorator.db
 python app.py
 ```
 
-### Import Errors
-```bash
-# Reinstall dependencies
-pip install -r requirements.txt --force-reinstall
-```
+
 
 ## 🌐 Accessing the Application
 
