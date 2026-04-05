@@ -2,17 +2,7 @@
 
 A modern, feature-rich web application for creating stunning 2D floor plans and 3D visualizations of interior spaces with AI-powered furniture recommendations.
 
-## 🎨 Features
-
-### Core Features
-- 🏠 Create designs for any room type (bedroom, kitchen, living room, office)
-- 📐 2D Floor plan editor with grid-based alignment
-- 🎯 Drag & drop furniture with snap-to-grid
-- 🔄 Resize, rotate, and move objects
-- ↩️ Undo/Redo functionality
-- 🎨 Wall, floor, and ceiling color customization
-- 💾 Save, load, and export designs
-
+## 🎨 Feat
 ### AI Features (with Gemini API)
 - 🤖 Smart furniture recommendations based on room type and budget
 - 🎨 AI-generated color palette suggestions
