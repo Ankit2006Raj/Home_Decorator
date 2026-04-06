@@ -87,10 +87,6 @@ home-decorator/
 │   │   ├── user.py
 │   │   ├── room.py
 │   │   ├── furniture.py
-│   │   ├── design.py
-│   │   └── theme.py
-│   │   ├── design_routes.py
-│   │   └── ai_routes.py
 │   └── services/          # Business logic
 │       ├── gemini_service.py
 │       ├── furniture_service.py
