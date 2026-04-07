@@ -6,10 +6,7 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 - 3D room visualization with Three.js
 - 📊 Budget estimator
 - 📦 Extensive furniture catalog
-- 🛒 Price and material information
-- 📱 Responsive de
-- Python 3.8+
-- pip (Python package manager)
+
 - A Gemini API key (free from [Google AI Studio](https://makersuite.google.com/app/apikey))
 
 ### Installation
