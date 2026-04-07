@@ -70,8 +70,7 @@ The application will be available at `http://localhost:5000`
    - Click "3D View" to see your design in 3D
    - Rotate, zoom, and explore the space
 
-6. **Export Your Design**
-   - Save to database or export as JSON
+
 
 ## 🏗️ Project Structure
 
