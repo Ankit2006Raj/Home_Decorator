@@ -2,11 +2,6 @@
 
 A modern, feature-rich web application for creating stunning 2D floor plans and 3D visualizations of interior spaces with AI-powered furniture recommendations.
 
-### Additional Features
-- 3D room visualization with Three.js
-
-
-- A Gemini API key (free from [Google AI Studio](https://makersuite.google.com/app/apikey))
 
 ### Installation
 
