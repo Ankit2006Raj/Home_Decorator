@@ -3,13 +3,6 @@
 A modern, feature-rich web application for creating stunning 2D floor plans and 3D visualizations of interior spaces with AI-powered furniture recommendations.
 
 
-### Installation
-
-1. **Clone/Download the project**
-```bash
-cd home-decorator
-```
-
 2. **Create a virtual environment** (recommended)
 ```bash
 python -m venv venv
