@@ -17,9 +17,7 @@ pip install -r requirements.txt
 ```bash
 # Copy .env.example to .env
 
-```
 
-5. **Run the application**
 ```bash
 python app.py
 ```
