@@ -13,10 +13,6 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 # Copy .env.example to .env
 
 
-```bash
-python app.py
-```
-
 The application will be available at `http://localhost:5000`
 
 ## 📖 Usage
