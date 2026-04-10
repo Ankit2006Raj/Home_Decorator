@@ -8,12 +8,7 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 
 ```
 
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Setup environment variables**
+3. **Install dep
 ```bash
 # Copy .env.example to .env
 
