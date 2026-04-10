@@ -10,11 +10,6 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 
 3. **Install dep
 ```bash
-# Copy .env.example to .env
-
-
-The application will be available at `http://localhost:5000`
-
 ## 📖 Usage
 
 ### Creating Your First Design
