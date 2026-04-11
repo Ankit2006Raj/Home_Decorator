@@ -3,12 +3,6 @@
 A modern, feature-rich web application for creating stunning 2D floor plans and 3D visualizations of interior spaces with AI-powered furniture recommendations.
 
 
-2. **Create a virtual environment** (recommended)
-```bash
-
-```
-
-3. **Install dep
 ```bash
 ## 📖 Usage
 
