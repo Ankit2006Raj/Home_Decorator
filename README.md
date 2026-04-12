@@ -15,8 +15,7 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 2. **Add Furniture**
    - Drag furniture from the left sidebar
    - Drop on the canvas to place items
-   - Adjust position and rotation as needed
-
+   
 3. **Customize Colors**
    - Use the color picker in the toolbar
    - Choose wall, floor, and ceiling colors
