@@ -3,8 +3,7 @@
 A modern, feature-rich web application for creating stunning 2D floor plans and 3D visualizations of interior spaces with AI-powered furniture recommendations.
 
 
-```bash
-## 📖 Usage
+
 
 ### Creating Your First Design
 
