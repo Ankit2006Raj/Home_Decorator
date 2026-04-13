@@ -11,9 +11,6 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
    - Click "Start Design" on the home page
    - Enter room details 
 
-2. **Add Furniture**
-   - Drag furniture from the left sidebar
-   - Drop on the canvas to place items
    
 3. **Customize Colors**
    - Use the color picker in the toolbar
