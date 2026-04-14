@@ -9,7 +9,7 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 
 1. **Go to the Editor**
    - Click "Start Design" on the home page
-   - Enter room details 
+     
 
    
 3. **Customize Colors**
