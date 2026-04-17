@@ -2,85 +2,14 @@
 
 A modern, feature-rich web application for creating stunning 2D floor plans and 3D visualizations of interior spaces with AI-powered furniture recommendations.
 
-## 🎨 Features
 
-### Core Features
-- 🏠 Create designs for any room type (bedroom, kitchen, living room, office)
-- 📐 2D Floor plan editor with grid-based alignment
-- 🎯 Drag & drop furniture with snap-to-grid
-- 🔄 Resize, rotate, and move objects
-- ↩️ Undo/Redo functionality
-- 🎨 Wall, floor, and ceiling color customization
-- 💾 Save, load, and export designs
 
-### AI Features (with Gemini API)
-- 🤖 Smart furniture recommendations based on room type and budget
-- 🎨 AI-generated color palette suggestions
-- 💡 Smart layout optimization suggestions
-
-### Additional Features
-- 3D room visualization with Three.js
-- 📊 Budget estimator
-- 📦 Extensive furniture catalog
-- 🛒 Price and material information
-- 📱 Responsive design for mobile/tablet
-- 🌙 Light/Dark mode support
-- 👨‍💼 Admin panel for furniture management
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8+
-- pip (Python package manager)
-- A Gemini API key (free from [Google AI Studio](https://makersuite.google.com/app/apikey))
-
-### Installation
-
-1. **Clone/Download the project**
-```bash
-cd home-decorator
-```
-
-2. **Create a virtual environment** (recommended)
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Setup environment variables**
-```bash
-# Copy .env.example to .env
-cp .env.example .env
-
-# Edit .env and add your Gemini API key
-# GEMINI_API_KEY=your_actual_api_key_here
-```
-
-5. **Run the application**
-```bash
-python app.py
-```
-
-The application will be available at `http://localhost:5000`
-
-## 📖 Usage
 
 ### Creating Your First Design
 
-1. **Go to the Editor**
-   - Click "Start Design" on the home page
-   - Enter room details (name, type, dimensions)
+     
 
-2. **Add Furniture**
-   - Drag furniture from the left sidebar
-   - Drop on the canvas to place items
-   - Adjust position and rotation as needed
-
+   
 3. **Customize Colors**
    - Use the color picker in the toolbar
    - Choose wall, floor, and ceiling colors
@@ -95,8 +24,7 @@ The application will be available at `http://localhost:5000`
    - Click "3D View" to see your design in 3D
    - Rotate, zoom, and explore the space
 
-6. **Export Your Design**
-   - Save to database or export as JSON
+
 
 ## 🏗️ Project Structure
 
@@ -112,13 +40,6 @@ home-decorator/
 │   │   ├── user.py
 │   │   ├── room.py
 │   │   ├── furniture.py
-│   │   ├── design.py
-│   │   └── theme.py
-│   ├── routes/            # API endpoints
-│   │   ├── user_routes.py
-│   │   ├── furniture_routes.py
-│   │   ├── design_routes.py
-│   │   └── ai_routes.py
 │   └── services/          # Business logic
 │       ├── gemini_service.py
 │       ├── furniture_service.py
@@ -173,7 +94,7 @@ home-decorator/
 ## 🎯 Configuration
 
 ### Environment Variables
-```env
+
 # API Configuration
 GEMINI_API_KEY=your_api_key_here
 
@@ -192,21 +113,9 @@ SECRET_KEY=your-secret-key-here
 
 To use AI-powered recommendations:
 
-1. **Get Gemini API Key**
-   - Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Sign in with your Google account
-   - Click "Create API Key"
-   - Copy the key
-
 2. **Add to .env file**
    ```env
    GEMINI_API_KEY=your_copied_api_key
-   ```
-
-3. **Features Enabled:**
-   - Furniture recommendations
-   - Color palette suggestions
-   - Layout optimization
 
 ## 🔧 Troubleshooting
 
@@ -223,11 +132,7 @@ rm home_decorator.db
 python app.py
 ```
 
-### Import Errors
-```bash
-# Reinstall dependencies
-pip install -r requirements.txt --force-reinstall
-```
+
 
 ## 🌐 Accessing the Application
 
