@@ -248,6 +248,10 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 **Building beautiful homes, one design at a time** 🏠✨
 
 <p align="center">
+  <strong>10+ Contributions</strong> | <em>Last Updated: April 18, 2026</em>
+</p>
+
+<p align="center">
   <i>© 2026 Home Decorator. All rights reserved.</i>
 </p>
 
