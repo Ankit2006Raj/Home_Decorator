@@ -207,7 +207,7 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 - [ ] Offline mode
 - [ ] Mobile app
 - [ ] Advanced physics simulation
-- [ ] Material library expansion
+
 
 ---
 
