@@ -205,7 +205,6 @@ gunicorn -w 4 -b 0.0.0.0:8000 app:app
 - [ ] Community design library
 - [ ] Collaboration features
 - [ ] Offline mode
-- [ ] Mobile
 
 ---
 
