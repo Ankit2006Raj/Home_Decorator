@@ -80,7 +80,6 @@ home-decorator/
 - `POST /api/designs/item/<id>/update` - Update item position
 - `POST /api/designs/item/<id>/remove` - Remove item from design
 - `POST /api/designs/<id>/update-colors` - Update room colors
-- `POST /api/designs/<id>/delete` - Delete design
 
 ### AI Features
 - `POST /api/ai/recommendations` - Get furniture recommendations
