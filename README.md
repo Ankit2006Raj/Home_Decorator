@@ -112,9 +112,7 @@ To use AI-powered recommendations:
    ```env
    GEMINI_API_KEY=your_copied_api_key
 
-## 🔧 Troubleshooting
 
-### Port Already in Use
 ```bash
 # Change port in app.py or run on different port
 python app.py --port 5001
