@@ -1,6 +1,7 @@
 import os
 import sys
 import logging
+from datetime import datetime
 from flask import Flask, render_template, send_from_directory, jsonify
 from flask_cors import CORS
 from config import config
@@ -47,6 +48,35 @@ def create_app(config_name='development'):
     @app.route('/3d-view')
     def three_d_view():
         return render_template('3d-view.html')
+    
+    # Health check endpoint
+    @app.route('/health', methods=['GET'])
+    def health_check():
+        """Health check endpoint for monitoring"""
+        return jsonify({
+            'status': 'healthy',
+            'timestamp': datetime.now().isoformat(),
+            'version': '1.0.0',
+            'environment': os.getenv('FLASK_ENV', 'development')
+        }), 200
+    
+    # API status endpoint
+    @app.route('/api/status', methods=['GET'])
+    def api_status():
+        """API status endpoint"""
+        try:
+            # Test database connection
+            db.session.execute('SELECT 1')
+            db_status = 'connected'
+        except Exception as e:
+            logger.warning(f"Database connection check failed: {str(e)}")
+            db_status = 'disconnected'
+        
+        return jsonify({
+            'api': 'online',
+            'database': db_status,
+            'timestamp': datetime.now().isoformat()
+        }), 200
     
     # Serve CSS files with proper mime type
     @app.route('/css/<path:path>')
