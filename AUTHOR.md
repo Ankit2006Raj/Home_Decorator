@@ -21,6 +21,13 @@ An enthusiastic developer passionate about creating innovative solutions for int
 - 📧 **Email:** ankit9905163014@gmail.com
   - Feel free to reach out for collaborations or inquiries
 
+### Skills & Expertise
+- Full-stack web development (Python, JavaScript, Flask)
+- AI/ML integration (Gemini API)
+- 3D visualization and graphics
+- Database design and optimization
+- REST API development
+
 ### About This Project
 
 The Home Decorator project is built with a passion for combining AI technology with interior design creativity. The goal is to make professional-grade interior design tools accessible to everyone, from homeowners to interior designers.
