@@ -45,6 +45,14 @@ python app.py
 
 The application will start at `http://localhost:8000`
 
+## Environment Variables
+
+### Required Variables
+- `GEMINI_API_KEY`: Your Google Gemini API key for AI features
+- `DATABASE_URL`: PostgreSQL or SQLite database connection string
+- `FLASK_ENV`: Set to 'development' or 'production'
+- `SECRET_KEY`: Flask secret key for session management
+
 ## Troubleshooting
 
 ### CSS Not Loading
