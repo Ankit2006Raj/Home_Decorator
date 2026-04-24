@@ -1,5 +1,8 @@
 """
-WSGI entry point for production deployment with enhanced error handling
+WSGI entry point for production deployment with enhanced error handling.
+
+This module serves as the application interface for production servers like Gunicorn.
+Implements proper logging and error handling for graceful failure recovery.
 """
 import os
 import logging
