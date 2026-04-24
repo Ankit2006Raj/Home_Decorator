@@ -1,23 +1,19 @@
-# Commit 1
-# Commit 2
-# Commit 3
-# Commit 4
-# Commit 5
-# Commit 6
-# Commit 7
-# Commit 8
-Contribution batch 2
-Contribution batch 3
-Contribution batch 4
-Contribution batch 5
-Contribution batch 6
-Contribution batch 7
-Contribution batch 8
-Contribution batch 9
-Contribution batch 10
-Contribution batch 11
-Contribution batch 12
-Contribution batch 13
-Contribution batch 14
-Contribution batch 15
-Contribution batch 16
+# Changelog
+
+## [1.0.0] - 2024-04-24
+### Added
+- Initial release of Home Decorator
+- 2D floor planning with drag-and-drop interface
+- 3D visualization with Three.js
+- AI-powered furniture recommendations using Gemini API
+- User authentication and design management
+- Theme system for quick styling
+- Budget-aware furniture suggestions
+- Admin dashboard for design management
+
+### Features
+- Real-time design editing
+- Color customization for walls, floors, and ceilings
+- Furniture library with multiple categories
+- Export designs functionality
+- Search and filter capabilities
