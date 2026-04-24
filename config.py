@@ -1,3 +1,8 @@
+"""Application Configuration Module
+
+Handles all environment-based configuration and settings for the Home Decorator application.
+Supports development, testing, and production environments.
+"""
 import os
 import logging
 from dotenv import load_dotenv
