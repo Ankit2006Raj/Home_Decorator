@@ -107,8 +107,6 @@ FLASK_DEBUG=True
 # Database
 DATABASE_URL=sqlite:///home_decorator.db
 
-# Security
-SECRET_KEY=your-secret-key-here
 ```
 
 ## 🤖 AI Features Setup
