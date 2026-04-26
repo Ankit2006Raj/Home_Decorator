@@ -91,7 +91,6 @@ home-decorator/
 ### AI Features
 - `POST /api/ai/recommendations` - Get furniture recommendations
 - `POST /api/ai/color-palette` - Get color suggestions
-- `POST /api/ai/layout-suggestions` - Get layout recommendations
 
 ## 🎯 Configuration
 
