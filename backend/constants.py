@@ -12,7 +12,7 @@ ALLOWED_FILE_EXTENSIONS: Final[list] = ['pdf', 'txt', 'json', 'csv']
 DEFAULT_PAGE_SIZE: Final[int] = 20
 MAX_PAGE_SIZE: Final[int] = 100
 API_VERSION: Final[str] = 'v1'
-API_TIMEOUT: Final[int] = 30
+API_TIMEOUT: Final[int] = 30  # Timeout in seconds for API calls
 
 # Room dimension constants
 MIN_ROOM_LENGTH: Final[float] = 2.0
