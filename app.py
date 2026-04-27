@@ -1,12 +1,13 @@
-import os
-import sys
-import logging
-from datetime import datetime
 """Home Decorator - AI-Powered Interior Design Application
 
 This is the main Flask application entry point for the Home Decorator project.
 It handles routing, initialization of services, and request/response management.
+All API routes and frontend serving are configured here.
 """
+import os
+import sys
+import logging
+from datetime import datetime
 from flask import Flask, render_template, send_from_directory, jsonify
 from flask_cors import CORS
 from config import config
