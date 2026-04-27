@@ -8,6 +8,7 @@ A modern, feature-rich web application for creating stunning 2D floor plans and 
 - **3D Visualization**: Immersive 3D view of your designs using Three.js
 - **Theme Support**: Pre-built themes for quick styling
 - **Budget-Aware**: Get recommendations within your budget constraints
+- **Real-time Updates**: Live preview of design changes as you work
 
 
 
