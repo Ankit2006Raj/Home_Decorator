@@ -1,5 +1,8 @@
 """
 Centralized error handling and custom exceptions
+
+This module provides a hierarchy of custom exception classes for the API,
+allowing for standardized error responses and proper HTTP status codes.
 """
 import logging
 from typing import Dict, Any, Optional
