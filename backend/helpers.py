@@ -1,5 +1,8 @@
 """
-General purpose helper utilities
+General purpose helper utilities for common operations
+
+This module provides utility classes for datetime handling, hashing, UUID generation,
+and other common operations used throughout the application.
 """
 import hashlib
 import uuid
