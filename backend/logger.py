@@ -9,7 +9,7 @@ from typing import Optional
 
 
 class LoggerSetup:
-    """Setup and configuration for application logging"""
+    """Setup and configuration for application logging with multi-handler support"""
     
     _loggers = {}
     
