@@ -4,7 +4,7 @@ Application-wide constants and configuration values for the entire system
 from typing import Final
 
 # File upload constants
-MAX_UPLOAD_SIZE: Final[int] = 16 * 1024 * 1024  # 16MB
+MAX_UPLOAD_SIZE: Final[int] = 16 * 1024 * 1024  # 16MB limit for file uploads
 ALLOWED_IMAGE_EXTENSIONS: Final[list] = ['jpg', 'jpeg', 'png', 'gif', 'webp']
 ALLOWED_FILE_EXTENSIONS: Final[list] = ['pdf', 'txt', 'json', 'csv']
 
