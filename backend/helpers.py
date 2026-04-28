@@ -30,7 +30,7 @@ class DateTimeUtils:
     
     @staticmethod
     def get_timestamp() -> int:
-        """Get current timestamp in seconds"""
+        """Get current Unix timestamp in seconds since epoch"""
         return int(datetime.utcnow().timestamp())
     
     @staticmethod
