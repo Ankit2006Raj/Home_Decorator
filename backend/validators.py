@@ -34,7 +34,7 @@ class Validator:
     @staticmethod
     def validate_number(value: Any, field_name: str, min_val: Optional[float] = None,
                        max_val: Optional[float] = None, is_integer: bool = False) -> float:
-        """Validate and return numeric value"""
+        """Validate and return numeric value with optional range constraints"""
         try:
             if is_integer:
                 num = int(value)
