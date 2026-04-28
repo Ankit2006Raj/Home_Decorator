@@ -1,5 +1,5 @@
 """
-Centralized logging configuration and utilities
+Centralized logging configuration and utilities for application debugging and monitoring
 """
 import logging
 import logging.handlers
