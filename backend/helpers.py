@@ -25,7 +25,7 @@ class DateTimeUtils:
     
     @staticmethod
     def format_datetime(dt: datetime, fmt: str = '%Y-%m-%d %H:%M:%S') -> str:
-        """Format datetime to string"""
+        """Format datetime object to string representation"""
         return dt.strftime(fmt)
     
     @staticmethod
