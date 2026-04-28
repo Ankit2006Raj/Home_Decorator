@@ -17,3 +17,4 @@
 - Furniture library with multiple categories
 - Export designs functionality
 - Search and filter capabilities
+# Contribution 3
