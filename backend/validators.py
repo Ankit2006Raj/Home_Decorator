@@ -12,7 +12,7 @@ class Validator:
     @staticmethod
     def validate_string(value: Any, field_name: str, min_length: int = 1, 
                        max_length: int = 255, allow_empty: bool = False) -> str:
-        """Validate and return string value"""
+        """Validate and sanitize string input values with length constraints"""
         if value is None:
             if allow_empty:
                 return ""
