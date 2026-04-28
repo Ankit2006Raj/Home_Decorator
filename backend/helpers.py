@@ -16,11 +16,11 @@ logger = logging.getLogger(__name__)
 
 
 class DateTimeUtils:
-    """DateTime utility functions"""
+    """DateTime utility functions for handling time operations across the application"""
     
     @staticmethod
     def now_utc() -> datetime:
-        """Get current UTC datetime"""
+        """Get current UTC datetime in ISO format"""
         return datetime.utcnow()
     
     @staticmethod
