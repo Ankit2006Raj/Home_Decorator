@@ -23,7 +23,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 def create_app(config_name='development'):
-    """Application factory with improved static file handling"""
+    """Application factory with improved static file handling and asset serving"""
     app = Flask(__name__, template_folder='frontend', static_folder='frontend/assets', static_url_path='/assets')
     
     # Load configuration
