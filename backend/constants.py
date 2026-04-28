@@ -1,5 +1,5 @@
 """
-Application-wide constants and configuration values
+Application-wide constants and configuration values for the entire system
 """
 from typing import Final
 
