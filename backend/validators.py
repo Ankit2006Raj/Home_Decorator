@@ -7,7 +7,7 @@ from backend.errors import ValidationError
 
 
 class Validator:
-    """Input validation utility class"""
+    """Input validation utility class for form data and API parameters"""
     
     @staticmethod
     def validate_string(value: Any, field_name: str, min_length: int = 1, 
