@@ -179,3 +179,4 @@ If you encounter issues:
 3. Check Flask server logs
 4. Verify all files are in correct locations
 5. Ensure dependencies are installed
+# Note
